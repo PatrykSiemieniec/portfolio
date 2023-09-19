@@ -23,26 +23,10 @@ module.exports = {
             width: "100%"
           }
         },
-        blink: {
-          "50%": {
-            borderColor: "transparent"
-          },
-          "100%": {
-            borderColor: "white"
-          }
-        }, fadeIn: {
-          "0%": {
-            opacity: 0,
-            scale: 0.8,
-          },
-          "100%": {
-            opacity: 1,
-            scale: 1
-          }
-        }
+
       },
       animation: {
-        typing: "typing 2s steps(20) alternate, blink .7s infinite",
+        typing: "typing 2s steps(20) alternate ",
         appear: 'fadeIn 2s linear',
       }
     },

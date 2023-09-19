@@ -21,7 +21,7 @@ const Header = () => {
             <div className=" text-caputmortuum text-xl md:text-4xl">Junior Fronted Developer</div>
             {width > 1024 ?
                 <div className=" flex gap-12 text-white text-xl  ">
-                    <a className=" text-center text-liver  " href="#aboutme">About Me</a>
+                    <a className=" text-center text-liver " href="#aboutme">About Me</a>
                     <a className=" text-center  text-liver   " href="#technologies">Technologies</a>
                     <a className=" text-center  text-liver " href="#projects">Projects</a>
                     <a className=" text-center  text-liver  " href="#contact">Contact</a>
