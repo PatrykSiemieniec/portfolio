@@ -10,7 +10,7 @@ function Sidebar() {
   return (
     <Menu>
       <Menu.Button>
-        <div className="rounded-lg bg-cinereous  p-3 text-caputmortuum">
+        <div className="rounded-lg bg-cinereous  p-3 text-caputmortuum border border-liver">
           <RxHamburgerMenu />
         </div>
       </Menu.Button>
