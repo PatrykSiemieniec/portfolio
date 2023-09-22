@@ -2,32 +2,44 @@ import { useEffect, useState } from "react";
 
 import Sidebar from "../components/Sidebar";
 
-
 const Header = () => {
-    const [width, setWidth] = useState(window.innerWidth)
-    useEffect(() => {
-        const handleResize = () => {
-            const width = window.innerWidth;
-            setWidth(width);
-        };
-        window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setWidth(width);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-    return (
-        <div className=" w-full h-[100px] flex justify-between items-center p-6 md:pl-20 md:pr-20 z-50 ">
-            <div className=" text-caputmortuum text-xl md:text-4xl">Junior Frontend Developer</div>
-            {width > 1024 ?
-                <div className=" flex gap-12 text-white text-xl  ">
-                    <a className=" text-center text-liver " href="#aboutme">About Me</a>
-                    <a className=" text-center  text-liver   " href="#technologies">Technologies</a>
-                    <a className=" text-center  text-liver " href="#projects">Projects</a>
-                    <a className=" text-center  text-liver  " href="#contact">Contact</a>
-                </div> : <Sidebar />}
+  return (
+    <div className=" z-50 flex h-[100px] w-full items-center justify-between p-6 text-caputmortuum md:pl-12 md:pr-12  ">
+      <div className=" text-xl md:text-3xl xl:text-4xl">
+        Junior Frontend Developer
+      </div>
+      {width > 1024 ? (
+        <div className=" flex gap-6 text-2xl xl:gap-12 ">
+          <a className=" text-center" href="#aboutme">
+            About Me
+          </a>
+          <a className=" text-center" href="#technologies">
+            Technologies
+          </a>
+          <a className=" text-center" href="#projects">
+            Projects
+          </a>
+          <a className=" text-center" href="#contact">
+            Contact
+          </a>
         </div>
-    );
+      ) : (
+        <Sidebar />
+      )}
+    </div>
+  );
 };
 
 export default Header;

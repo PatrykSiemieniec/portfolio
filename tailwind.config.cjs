@@ -10,6 +10,7 @@ module.exports = {
         'silver': '#C4BBAF',
         'cinereous': "#A5978B",
         'liver': "#5C4742",
+        'lightliver': "#856860",
         'redwood': '#8D5B4C',
         'caputmortuum': '#5A2A27'
       },

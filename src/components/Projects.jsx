@@ -9,6 +9,7 @@ import quiz from "../assets/projects/irregularFull.png";
 import weather from "../assets/projects/weather.png";
 import internship_project from "../assets/projects/internship_project.png";
 import restaurantapp from "../assets/projects/restaurantapp.png";
+import portfolio from "../assets/projects/portfolio.png";
 
 import react from "../assets/technologiesLogo/react.png";
 import ts from "../assets/technologiesLogo/ts.png";
@@ -69,6 +70,17 @@ const Projects = () => {
       github: "https://github.com/PatrykSiemieniec/engineering_project",
       website: "",
       technologies: [html, css, js, react, firebase],
+    },
+    {
+      name: "Portfolio",
+      imgSrc: portfolio,
+      alt: "Portfolio",
+      description:
+        "It's portfolio you are seeing right now, created to group any information about me which I want to share with you.",
+      yt: "",
+      github: "https://github.com/PatrykSiemieniec/portfolio",
+      website: "https://patryksiemieniecportfolio.netlify.app/",
+      technologies: [html, tailwind, js, react, headlessui],
     },
   ];
   return (
