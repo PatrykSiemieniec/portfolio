@@ -13,10 +13,6 @@ const Contact = () => {
         {" "}
         <MdOutlineEmail size={35} /> patryk.siemieniec99@gmail.com
       </span>
-      <span className="flex items-center gap-3 text-xl">
-        {" "}
-        <AiOutlinePhone size={35} /> 791-845-271
-      </span>
       <div className=" flex gap-3">
         <a target="_blank" href="https://github.com/PatrykSiemieniec"></a>
         <BsGithub className=" cursor-pointer" size={35} />

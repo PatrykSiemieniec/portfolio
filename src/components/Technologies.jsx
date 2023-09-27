@@ -81,7 +81,7 @@ const Technologies = () => {
     {
       elementVisibility: elementVisibility[1],
       ref:elementRefs[1],
-      header: "I'm ready to work with",
+      header: "I'm learning currently",
       technologies: [tailwind, angular, rxjs, redux],
       additionalText:
         "And the technologies mentioned earlier, we must always learn!",

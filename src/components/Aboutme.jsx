@@ -28,7 +28,7 @@ const Aboutme = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className="shadow-lightliver border-lightliver flex w-11/12 flex-col gap-4  rounded-xl  border bg-cinereous p-5 shadow-inner transition duration-1000 hover:scale-105 hover:transition hover:duration-1000 lg:w-8/12 lg:flex-row">
+        <div className=" border-lightliver shadow-liver flex w-11/12 flex-col  gap-4  rounded-xl border bg-cinereous p-5 shadow-inner transition duration-1000 hover:scale-105 hover:transition hover:duration-1000 lg:w-8/12 lg:flex-row">
           <div className=" flex w-full flex-col items-center justify-center lg:w-1/2  ">
             <img
               className="border-lightliver  rounded-lg border brightness-110 drop-shadow-lg "
@@ -48,7 +48,7 @@ const Aboutme = () => {
               </div>
             </div>
             <div className=" border-lightliver flex flex-col gap-4 rounded-lg border bg-white bg-opacity-20 p-4 text-center text-white shadow-inner shadow-cinereous ">
-              <span className=" text-white text-lg">
+              <span className=" text-lg text-white">
                 <p className="text-xl">
                   <b>About Me</b>
                 </p>
