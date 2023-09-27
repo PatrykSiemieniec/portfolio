@@ -17,9 +17,9 @@ const Header = () => {
 
   return (
     <div className=" z-50 flex h-[100px] w-full items-center justify-between p-6 text-caputmortuum md:pl-12 md:pr-12  ">
-      <div className=" text-xl md:text-3xl xl:text-4xl">
+      <h1 className=" text-xl md:text-3xl xl:text-4xl">
         Junior Frontend Developer
-      </div>
+      </h1>
       {width > 1024 ? (
         <div className=" flex gap-6 text-2xl xl:gap-12 ">
           <a className=" text-center" href="#aboutme">

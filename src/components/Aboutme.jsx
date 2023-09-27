@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import photo from "../assets/photo.jpg";
-import resume from "../assets/CV_ANG_dane.pdf";
+import resume from "../assets/CV_ENG_NODATA.pdf";
 import { RxDoubleArrowDown } from "react-icons/rx";
 import { Transition } from "@headlessui/react";
 
@@ -39,12 +39,12 @@ const Aboutme = () => {
           <div className=" flex w-full  flex-col items-center justify-between lg:w-1/2">
             <div className="flex items-center justify-center">
               <div className="flex w-max flex-col items-center  justify-center text-5xl text-white">
-                <b className="animate-typing overflow-hidden whitespace-nowrap  text-5xl font-bold text-white">
+                <h2 className="animate-typing overflow-hidden whitespace-nowrap  text-5xl font-bold text-white">
                   Hi! I'm Patryk
-                </b>
-                <span className="text-xl md:text-2xl">
+                </h2>
+                <h3 className="text-xl md:text-2xl">
                   Junior Frontend Developer
-                </span>
+                </h3>
               </div>
             </div>
             <div className=" border-lightliver flex flex-col gap-4 rounded-lg border bg-white bg-opacity-20 p-4 text-center text-white shadow-inner shadow-cinereous ">

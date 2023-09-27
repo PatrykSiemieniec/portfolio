@@ -1,7 +1,6 @@
-import resume from "../assets/CV_ANG_dane.pdf";
+import resume from "../assets/CV_ENG_NODATA.pdf";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
-import { AiOutlinePhone } from "react-icons/ai";
 
 const Contact = () => {
   return (
