@@ -10,7 +10,7 @@ function Sidebar() {
   return (
     <Menu>
       <Menu.Button>
-        <div className="rounded-lg bg-cinereous  p-3 text-caputmortuum border border-liver">
+        <div className="rounded-lg bg-white bg-opacity-20 p-3 text-white border border-neonblue">
           <RxHamburgerMenu />
         </div>
       </Menu.Button>
@@ -23,7 +23,7 @@ function Sidebar() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className=" fixed right-0 top-0 z-50 flex h-full flex-col gap-4 border-l border-caputmortuum  bg-silver p-5 text-white ">
+        <Menu.Items className=" fixed right-0 top-0 z-50 flex h-full flex-col gap-4 border-l border-neonblue  bg-black p-5 text-white ">
           <Menu.Item>
             {({ close }) => (
               <div

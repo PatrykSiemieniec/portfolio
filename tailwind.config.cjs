@@ -12,7 +12,11 @@ module.exports = {
         'liver': "#5C4742",
         'lightliver': "#856860",
         'redwood': '#8D5B4C',
-        'caputmortuum': '#5A2A27'
+        'caputmortuum': '#5A2A27',
+        'neonteal': "#00FFD1",
+        'neonyellow': "#FFFF00",
+        'neonpink': "#FF6EC7",
+        'neonblue': "#00D8FF"
       },
       keyframes: {
         typing: {
@@ -24,11 +28,20 @@ module.exports = {
             width: "100%"
           }
         },
+        slidein:{
+          "0%": {
+            transform: 'translateX(-100%)'
+           
+          },
+          "100%": {
+            transform: 'translateX(0)'
+          }
+        }
 
       },
       animation: {
         typing: "typing 2s steps(20) alternate ",
-        appear: 'fadeIn 2s linear',
+        slideIn: "slidein 1s steps(20) alternate ",
       }
     },
   },

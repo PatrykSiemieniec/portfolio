@@ -16,7 +16,7 @@ const Aboutme = () => {
   return (
     <div
       id="aboutme"
-      className=" mt-10 flex h-auto w-full flex-col items-center justify-center bg-silver md:justify-start lg:h-screen  "
+      className=" mt-10 flex h-auto w-full flex-col items-center justify-center bg-black md:justify-start lg:h-screen  "
     >
       <Transition
         as={Fragment}
@@ -28,10 +28,10 @@ const Aboutme = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className=" border-lightliver shadow-liver flex w-11/12 flex-col  gap-4  rounded-xl border bg-cinereous p-5 shadow-inner transition duration-1000 hover:scale-105 hover:transition hover:duration-1000 lg:w-8/12 lg:flex-row">
+        <div className=" flex w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-neonblue  shadow-xl transition duration-1000 lg:w-8/12 lg:flex-row">
           <div className=" flex w-full flex-col items-center justify-center lg:w-1/2  ">
             <img
-              className="border-lightliver  rounded-lg border brightness-110 drop-shadow-lg "
+              className="rounded-lg  border border-neonblue  drop-shadow-lg  "
               src={photo}
               alt="photo"
             />
@@ -47,7 +47,7 @@ const Aboutme = () => {
                 </h3>
               </div>
             </div>
-            <div className=" border-lightliver flex flex-col gap-4 rounded-lg border bg-white bg-opacity-20 p-4 text-center text-white shadow-inner shadow-cinereous ">
+            <div className=" flex flex-col gap-4 rounded-lg border border-neonblue bg-white bg-opacity-20 p-4 text-center text-white shadow-inner shadow-neonblue ">
               <span className=" text-lg text-white">
                 <p className="text-xl">
                   <b>About Me</b>
@@ -80,7 +80,7 @@ const Aboutme = () => {
             </div>
 
             <a
-              className="text-caputmortuun mt-10 w-48 rounded-md border border-caputmortuum bg-white bg-opacity-20 p-2 text-center drop-shadow-lg hover:bg-liver hover:text-silver"
+              className="text-white mt-10 w-48 rounded-md border border-neonblue bg-white bg-opacity-20 p-2 text-center  hover:shadow-sm hover:shadow-neonblue"
               href={resume}
               download="PS_CV"
             >
@@ -91,7 +91,7 @@ const Aboutme = () => {
       </Transition>
       <a
         href="#technologies"
-        className=" mt-4 animate-bounce cursor-pointer p-6 text-liver "
+        className=" mt-8 animate-bounce cursor-pointer p-6 text-white "
       >
         <RxDoubleArrowDown size={35} />
       </a>

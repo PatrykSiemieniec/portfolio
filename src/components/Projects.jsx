@@ -86,10 +86,10 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className=" relative flex h-auto w-full flex-col items-center justify-center gap-4 bg-silver p-2 xl:flex-row   "
+      className=" relative flex h-auto w-full flex-col items-center justify-center gap-4 bg-black p-2 xl:flex-row   "
     >
       <div className=" flex flex-col items-center justify-center ">
-        <p className=" text-4xl text-caputmortuum">Projects</p>
+        <p className=" text-4xl text-white">Projects</p>
         <div className="mt-10 flex  flex-col flex-wrap justify-evenly gap-4 p-6 lg:mt-0 lg:flex-row ">
           {ListOfProjects.map((item, idx) => {
             return (
@@ -109,7 +109,7 @@ const Projects = () => {
         </div>
         <a
           href="#contact"
-          className="animate-bounce cursor-pointer    p-6 text-liver md:p-0 "
+          className="animate-bounce cursor-pointer    p-6 text-white md:p-0 "
         >
           <RxDoubleArrowDown size={35} />
         </a>
@@ -131,8 +131,8 @@ const Project = ({
   technologies,
 }) => {
   return (
-    <div className="flex flex-col items-center justify-evenly rounded-lg bg-white bg-opacity-20 p-6 shadow-md shadow-cinereous drop-shadow-lg xl:w-2/5 xl:p-3">
-      <span className="text-center text-3xl text-caputmortuum">{name}</span>
+    <div className="flex flex-col items-center justify-evenly rounded-lg bg-white bg-opacity-20 p-6 shadow-md shadow-neonblue drop-shadow-lg xl:w-2/5 xl:p-3">
+      <span className="text-center text-3xl text-white">{name}</span>
       <div className="flex w-full flex-col items-center  gap-4 p-2 lg:flex-row ">
         <img
           className=" w-full rounded object-cover transition duration-700 hover:scale-105 lg:w-3/5"
@@ -140,8 +140,8 @@ const Project = ({
           alt={alt}
         />
         <div className="w-full text-center text-lg lg:w-2/5">
-          <span className="text-liver">{description}</span>
-          <div className="mt-4 flex justify-center gap-6 text-liver">
+          <span className="text-white">{description}</span>
+          <div className="mt-4 flex justify-center gap-6 text-white">
             {website && (
               <a target="_blank" alt={website} href={website}>
                 <AiOutlineGlobal
@@ -170,7 +170,7 @@ const Project = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col  items-center  p-1">
+      <div className="flex flex-col  items-center  p-1 text-white">
         <p>Technologies</p>
         <div className="flex gap-2 flex-wrap items-center justify-center ">
           {technologies.map((item, idx) => (

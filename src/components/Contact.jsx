@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className=" flex h-screen w-full flex-col items-center justify-center gap-6 bg-cinereous text-white"
+      className=" flex h-screen w-full flex-col items-center justify-center gap-6 bg-gray-900 text-white"
     >
       <span className="flex items-center gap-3 text-xl">
         {" "}
@@ -23,7 +23,7 @@ const Contact = () => {
       </div>
 
       <a
-        className="text-caputmortuun mt-10 w-48 rounded-md border border-white bg-caputmortuum bg-opacity-20 p-2 text-center drop-shadow-lg hover:border-caputmortuum hover:bg-liver hover:text-white"
+        className="text-white mt-10 w-48 rounded-md border border-white bg-white bg-opacity-20 p-2 text-center hover:shadow-md hover:shadow-neonblue "
         href={resume}
         download="PS_CV"
       >

@@ -16,7 +16,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className=" z-50 flex h-[100px] w-full items-center justify-between p-6 text-caputmortuum md:pl-12 md:pr-12  ">
+    <div className=" z-50 flex h-[100px] w-full items-center justify-between p-6 text-white md:pl-12 md:pr-12  ">
       <h1 className=" text-xl md:text-3xl xl:text-4xl">
         Junior Frontend Developer
       </h1>
