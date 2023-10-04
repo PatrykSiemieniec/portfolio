@@ -16,7 +16,7 @@ const Aboutme = () => {
   return (
     <div
       id="aboutme"
-      className=" mt-10 flex h-auto w-full flex-col items-center justify-center bg-black md:justify-start lg:h-screen  "
+      className=" flex h-auto w-full flex-col items-center justify-center bg-black md:justify-start lg:h-screen  "
     >
       <Transition
         as={Fragment}
@@ -28,7 +28,7 @@ const Aboutme = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className=" flex w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-neonblue  shadow-xl transition duration-1000 lg:w-8/12 lg:flex-row">
+        <div className=" flex w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-neonblue  shadow-2xl transition duration-1000 lg:w-8/12 lg:flex-row">
           <div className=" flex w-full flex-col items-center justify-center lg:w-1/2  ">
             <img
               className="rounded-lg  border border-neonblue  drop-shadow-lg  "

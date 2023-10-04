@@ -25,9 +25,71 @@ import reacthookform from "../assets/technologiesLogo/reacthookform.png";
 import antd from "../assets/technologiesLogo/antd.png";
 import headlessui from "../assets/technologiesLogo/headlessui.png";
 import firebase from "../assets/technologiesLogo/firebase.png";
+
+import { forwardRef, useRef, useState, useEffect, Fragment } from "react";
+import { Transition } from "@headlessui/react";
 const Projects = () => {
+  const elementRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  // State for each element's visibility
+  const [elementVisibility, setElementVisibility] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  // Callback function when an element intersects with the viewport
+  const handleIntersection = (entries, index) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Update the visibility state for the corresponding element
+        setElementVisibility((prevVisibility) => {
+          const newVisibility = [...prevVisibility];
+          newVisibility[index] = true;
+          return newVisibility;
+        });
+      }
+    });
+  };
+
+  // Create an Intersection Observer for each element
+  useEffect(() => {
+    const observers = elementRefs.map((ref, index) => {
+      return new IntersectionObserver(
+        (entries) => {
+          handleIntersection(entries, index);
+        },
+        {
+          threshold: 1, // Adjust the threshold as needed
+        },
+      );
+    });
+
+    // Observe the elements
+    elementRefs.forEach((ref, index) => {
+      if (ref.current) {
+        observers[index].observe(ref.current);
+      }
+    });
+
+    // Clean up the observers when the component unmounts
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   const ListOfProjects = [
     {
+      elementVisibility: elementVisibility[0],
+      ref: elementRefs[0],
       name: "Irregular Verbs Quiz",
       imgSrc: quiz,
       alt: "quiz",
@@ -39,6 +101,8 @@ const Projects = () => {
       technologies: [html, css, ts, react],
     },
     {
+      elementVisibility: elementVisibility[1],
+      ref: elementRefs[1],
       name: "Weather App",
       imgSrc: weather,
       alt: "weather app",
@@ -47,9 +111,20 @@ const Projects = () => {
       yt: "",
       github: "https://github.com/PatrykSiemieniec/weather_app",
       website: "https://psweatherapp.netlify.app/",
-      technologies: [html, ts, react, tailwind, redux, reactquery, chartjs, headlessui],
+      technologies: [
+        html,
+        ts,
+        react,
+        tailwind,
+        redux,
+        reactquery,
+        chartjs,
+        headlessui,
+      ],
     },
     {
+      elementVisibility: elementVisibility[2],
+      ref: elementRefs[2],
       name: "Internship Project",
       imgSrc: internship_project,
       alt: "internship project",
@@ -58,9 +133,11 @@ const Projects = () => {
       yt: "",
       github: "https://github.com/PatrykSiemieniec/internship_project",
       website: "https://psinternshipproject.netlify.app/",
-      technologies: [html, ts, react, sass,redux, reacthookform, antd],
+      technologies: [html, ts, react, sass, redux, reacthookform, antd],
     },
     {
+      elementVisibility: elementVisibility[3],
+      ref: elementRefs[3],
       name: "Restaurant management system",
       imgSrc: restaurantapp,
       alt: "Restaurant management system",
@@ -72,6 +149,8 @@ const Projects = () => {
       technologies: [html, css, js, react, firebase],
     },
     {
+      elementVisibility: elementVisibility[4],
+      ref: elementRefs[4],
       name: "Portfolio",
       imgSrc: portfolio,
       alt: "Portfolio",
@@ -103,6 +182,8 @@ const Projects = () => {
                 github={item.github}
                 website={item.website}
                 technologies={item.technologies}
+                ref={item.ref}
+                transitionShow={item.elementVisibility}
               />
             );
           })}
@@ -120,69 +201,81 @@ const Projects = () => {
 
 export default Projects;
 
-const Project = ({
-  name,
-  imgSrc,
-  alt,
-  description,
-  yt,
-  github,
-  website,
-  technologies,
-}) => {
-  return (
-    <div className="flex flex-col items-center justify-evenly rounded-lg bg-white bg-opacity-20 p-6 shadow-md shadow-neonblue drop-shadow-lg xl:w-2/5 xl:p-3">
-      <span className="text-center text-3xl text-white">{name}</span>
-      <div className="flex w-full flex-col items-center  gap-4 p-2 lg:flex-row ">
-        <img
-          className=" w-full rounded object-cover transition duration-700 hover:scale-105 lg:w-3/5"
-          src={imgSrc}
-          alt={alt}
-        />
-        <div className="w-full text-center text-lg lg:w-2/5">
-          <span className="text-white">{description}</span>
-          <div className="mt-4 flex justify-center gap-6 text-white">
-            {website && (
-              <a target="_blank" alt={website} href={website}>
-                <AiOutlineGlobal
-                  size={35}
-                  className="hover:scale-110 hover:drop-shadow"
-                />
-              </a>
-            )}
-            {yt && (
-              <a target="_blank" alt={yt} href={yt}>
-                <AiOutlineYoutube
-                  size={35}
-                  className="hover:scale-110 hover:drop-shadow"
-                />
-              </a>
-            )}
+const Project = forwardRef(
+  (
+    { name, imgSrc, alt, description, yt, github, website, technologies, transitionShow },
+    ref,
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className="flex flex-col items-center justify-evenly rounded-lg border border-neonblue bg-white bg-opacity-20 p-6 shadow-md shadow-neonblue drop-shadow-lg xl:w-2/5 xl:p-3"
+      >
+        <Transition
+     
+         show={transitionShow}
+         enter="transform transition duration-1000 "
+         enterFrom="opacity-0 scale-50  "
+         enterTo="opacity-100 scale-100  "
+         leave="transition-opacity duration-1000"
+         leaveFrom="opacity-100"
+         leaveTo="opacity-0">
+ 
+        <span className="text-center text-3xl text-white">{name}</span>
+        <div className="flex w-full flex-col items-center  gap-4 p-2 lg:flex-row ">
+          <img
+            className=" w-full rounded object-cover transition duration-700 hover:scale-105 lg:w-3/5"
+            src={imgSrc}
+            alt={alt}
+          />
+          <div className="w-full text-center text-lg lg:w-2/5">
+            <span className="text-white">{description}</span>
+            <div className="mt-4 flex justify-center gap-6 text-white">
+              {website && (
+                <a target="_blank" alt={website} href={website}>
+                  <AiOutlineGlobal
+                    size={35}
+                    className="hover:scale-110 hover:drop-shadow"
+                  />
+                </a>
+              )}
+              {yt && (
+                <a target="_blank" alt={yt} href={yt}>
+                  <AiOutlineYoutube
+                    size={35}
+                    className="hover:scale-110 hover:drop-shadow"
+                  />
+                </a>
+              )}
 
-            {github && (
-              <a target="_blank" alt={github} href={github}>
-                <AiOutlineGithub
-                  size={35}
-                  className="hover:scale-110 hover:drop-shadow"
-                />
-              </a>
-            )}
+              {github && (
+                <a target="_blank" alt={github} href={github}>
+                  <AiOutlineGithub
+                    size={35}
+                    className="hover:scale-110 hover:drop-shadow"
+                  />
+                </a>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col  items-center  p-1 text-white">
-        <p>Technologies</p>
-        <div className="flex gap-2 flex-wrap items-center justify-center ">
-          {technologies.map((item, idx) => (
-            <img
-              key={idx}
-              src={item}
-              width={50}
-              className="aspect-square object-contain"
-            />
-          ))}
+        <div className="flex flex-col  items-center  p-1 text-white">
+          <p>Technologies</p>
+          <div className="flex flex-wrap items-center justify-center gap-2 ">
+            {technologies.map((item, idx) => (
+              <img
+                key={idx}
+                src={item}
+                width={50}
+                className="aspect-square object-contain"
+              />
+            ))}
+          </div>
         </div>
+   
+        </Transition>
       </div>
-    </div>
-  );
-};
+
+    );
+  },
+);

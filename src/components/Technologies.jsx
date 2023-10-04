@@ -53,7 +53,7 @@ const Technologies = () => {
           handleIntersection(entries, index);
         },
         {
-          threshold: 0.5, // Adjust the threshold as needed
+          threshold: 0.9, // Adjust the threshold as needed
         },
       );
     });
@@ -68,7 +68,6 @@ const Technologies = () => {
     // Clean up the observers when the component unmounts
     return () => {
       observers.forEach((observer) => observer.disconnect());
-
     };
   }, []);
 
@@ -139,7 +138,7 @@ const TechnologySection = forwardRef(
     return (
       <div
         ref={ref}
-        className="shadow-neonblue flex min-h-[200px] flex-col items-center justify-evenly rounded-lg bg-white bg-opacity-20 p-4 shadow-md drop-shadow-lg lg:w-2/5 "
+        className="flex min-h-[200px] flex-col items-center justify-between rounded-lg border border-neonblue bg-white bg-opacity-20 p-4 shadow-md shadow-neonblue drop-shadow-lg lg:w-2/5 "
       >
         <span className="text-xl text-white">{header}</span>
         <Transition
