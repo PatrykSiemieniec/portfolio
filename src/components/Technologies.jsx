@@ -54,6 +54,7 @@ const Technologies = () => {
         },
         {
           threshold: 0.9, // Adjust the threshold as needed
+          delay: 100
         },
       );
     });
@@ -108,7 +109,7 @@ const Technologies = () => {
       id="technologies"
       className=" relative flex h-auto w-full flex-col items-center justify-center gap-4 bg-gray-900 p-6 lg:h-screen lg:flex-row "
     >
-      <p className="absolute top-[10px] text-4xl text-white">Technologies</p>
+      <p className="absolute top-[10px] text-5xl text-white p-4">Technologies</p>
       <div className="mt-10 flex w-screen flex-col flex-wrap justify-evenly gap-4 p-6 lg:mt-0 lg:flex-row  ">
         {TechnologySections.map((item, idx) => (
           <TechnologySection
@@ -138,7 +139,7 @@ const TechnologySection = forwardRef(
     return (
       <div
         ref={ref}
-        className="flex min-h-[200px] flex-col items-center justify-between rounded-lg border border-neonblue bg-white bg-opacity-20 p-4 shadow-md shadow-neonblue drop-shadow-lg lg:w-2/5 "
+        className="flex flex-col min-h-[300px] items-center justify-between rounded-lg border border-neonblue bg-white bg-opacity-20 p-4 shadow-md shadow-neonblue drop-shadow-lg lg:min-h-[200px] lg:w-2/5 "
       >
         <span className="text-xl text-white">{header}</span>
         <Transition
@@ -151,7 +152,7 @@ const TechnologySection = forwardRef(
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="flex min-h-[100px] w-full flex-wrap justify-around gap-4 p-4">
+          <div className="flex min-h-[300px] w-full flex-wrap justify-around gap-4 p-4 lg:min-h-0">
             {technologies.map((item, idx) => (
               <img
                 key={idx}

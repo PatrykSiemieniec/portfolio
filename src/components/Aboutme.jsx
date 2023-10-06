@@ -16,7 +16,7 @@ const Aboutme = () => {
   return (
     <div
       id="aboutme"
-      className=" flex h-auto w-full flex-col items-center justify-center bg-black md:justify-start lg:h-screen  "
+      className=" flex h-auto min-h-screen w-full flex-col items-center justify-center bg-black md:justify-start lg:h-screen  "
     >
       <Transition
         as={Fragment}
@@ -28,7 +28,7 @@ const Aboutme = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className=" flex w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-neonblue  shadow-2xl transition duration-1000 lg:w-8/12 lg:flex-row">
+        <div className=" min-h-[800px] flex w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-neonblue  shadow-2xl transition duration-1000 lg:w-8/12 lg:flex-row lg:min-h-fit">
           <div className=" flex w-full flex-col items-center justify-center lg:w-1/2  ">
             <img
               className="rounded-lg  border border-neonblue  drop-shadow-lg  "
@@ -38,9 +38,9 @@ const Aboutme = () => {
           </div>
           <div className=" flex w-full  flex-col items-center justify-between lg:w-1/2">
             <div className="flex items-center justify-center">
-              <div className="flex w-max flex-col items-center  justify-center text-5xl text-white">
+              <div className="flex w-max flex-col items-center  justify-center text-5xl p-6 text-white">
                 <h2 className="animate-typing overflow-hidden whitespace-nowrap  text-5xl font-bold text-white">
-                  Hi! I'm Patryk
+                 <span className=" text-neonblue text-6xl">Hi!</span>  I'm Patryk
                 </h2>
                 <h3 className="text-xl md:text-2xl">
                   Junior Frontend Developer
@@ -48,18 +48,20 @@ const Aboutme = () => {
               </div>
             </div>
             <div className=" flex flex-col gap-4 rounded-lg border border-neonblue bg-white bg-opacity-20 p-4 text-center text-white shadow-inner shadow-neonblue ">
-              <span className=" text-lg text-white">
-                <p className="text-xl">
-                  <b>About Me</b>
+              <span className=" text-lg text-white flex flex-col items-center">
+                <p className="text-xl w-max">
+                  <b className="text-neonblue">About Me</b>
+                  <hr></hr>
                 </p>
                 I'm Bachelor of Computer Science and self-educated Frontend
                 Developer with a huge willingness to learn technologies. Perhaps
                 the graphics aren't my best side as you can see, but don't worry
                 I can handle every under the hood technical problem.
               </span>
-              <span className=" text-lg">
-                <p className="text-xl">
-                  <b>Soft Skils</b>
+              <span className=" text-lg flex flex-col items-center">
+                <p className="text-xl w-max">
+                  <b className="text-neonblue">Soft Skils</b>
+                  <hr  ></hr>
                 </p>
                 Communicativeness
                 <br />
@@ -69,9 +71,10 @@ const Aboutme = () => {
                 <br />
                 Ability to solve problems independently
               </span>
-              <span className="text-lg">
-                <p className="text-xl">
-                  <b>Languages</b>
+              <span className="text-lg flex flex-col items-center">
+                <p className="text-xl w-max">
+                  <b className="text-neonblue">Languages</b>
+                  <hr></hr>
                 </p>
                 Polish - native
                 <br />
@@ -80,7 +83,7 @@ const Aboutme = () => {
             </div>
 
             <a
-              className="text-white mt-10 w-48 rounded-md border border-neonblue bg-white bg-opacity-20 p-2 text-center  hover:shadow-sm hover:shadow-neonblue"
+              className="text-white mt-10 w-48 rounded-md border border-neonblue bg-white bg-opacity-20 p-2 text-center  hover:shadow-sm hover:shadow-neonblue hover:bg-neonblue hover:font-bold hover:border-white "
               href={resume}
               download="PS_CV"
             >

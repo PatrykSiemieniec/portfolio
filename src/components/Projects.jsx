@@ -68,7 +68,8 @@ const Projects = () => {
           handleIntersection(entries, index);
         },
         {
-          threshold: 1, // Adjust the threshold as needed
+          threshold: 0.3, // Adjust the threshold as needed
+          delay: 100,
         },
       );
     });
@@ -165,10 +166,10 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className=" relative flex h-auto w-full flex-col items-center justify-center gap-4 bg-black p-2 xl:flex-row   "
+      className=" flex h-auto w-full flex-col items-center justify-center gap-4 bg-black p-2 xl:flex-row   "
     >
       <div className=" flex flex-col items-center justify-center ">
-        <p className=" text-4xl text-white">Projects</p>
+        <p className=" text-5xl text-white p-4">Projects</p>
         <div className="mt-10 flex  flex-col flex-wrap justify-evenly gap-4 p-6 lg:mt-0 lg:flex-row ">
           {ListOfProjects.map((item, idx) => {
             return (
@@ -203,79 +204,86 @@ export default Projects;
 
 const Project = forwardRef(
   (
-    { name, imgSrc, alt, description, yt, github, website, technologies, transitionShow },
+    {
+      name,
+      imgSrc,
+      alt,
+      description,
+      yt,
+      github,
+      website,
+      technologies,
+      transitionShow,
+    },
     ref,
   ) => {
     return (
       <div
         ref={ref}
-        className="flex flex-col items-center justify-evenly rounded-lg border border-neonblue bg-white bg-opacity-20 p-6 shadow-md shadow-neonblue drop-shadow-lg xl:w-2/5 xl:p-3"
+        className="flex min-h-[500px] w-full flex-col items-center justify-start rounded-lg  border border-neonblue bg-white bg-opacity-20 p-6 shadow-md shadow-neonblue drop-shadow-lg lg:min-h-[300px] lg:min-w-[700px] xl:w-2/5 xl:p-3"
       >
-        <Transition
-     
-         show={transitionShow}
-         enter="transform transition duration-1000 "
-         enterFrom="opacity-0 scale-50  "
-         enterTo="opacity-100 scale-100  "
-         leave="transition-opacity duration-1000"
-         leaveFrom="opacity-100"
-         leaveTo="opacity-0">
- 
         <span className="text-center text-3xl text-white">{name}</span>
-        <div className="flex w-full flex-col items-center  gap-4 p-2 lg:flex-row ">
-          <img
-            className=" w-full rounded object-cover transition duration-700 hover:scale-105 lg:w-3/5"
-            src={imgSrc}
-            alt={alt}
-          />
-          <div className="w-full text-center text-lg lg:w-2/5">
-            <span className="text-white">{description}</span>
-            <div className="mt-4 flex justify-center gap-6 text-white">
-              {website && (
-                <a target="_blank" alt={website} href={website}>
-                  <AiOutlineGlobal
-                    size={35}
-                    className="hover:scale-110 hover:drop-shadow"
-                  />
-                </a>
-              )}
-              {yt && (
-                <a target="_blank" alt={yt} href={yt}>
-                  <AiOutlineYoutube
-                    size={35}
-                    className="hover:scale-110 hover:drop-shadow"
-                  />
-                </a>
-              )}
+        <Transition
+          show={transitionShow}
+          enter="transform transition duration-1000 "
+          enterFrom="opacity-0 scale-50  "
+          enterTo="opacity-100 scale-100  "
+          leave="transition-opacity duration-1000"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="flex w-full flex-col items-center  gap-4 p-2 lg:flex-row  ">
+            <img
+              className=" w-full rounded object-cover transition duration-700 hover:scale-105 lg:w-3/5"
+              src={imgSrc}
+              alt={alt}
+            />
+            <div className="w-full text-center text-lg lg:w-2/5">
+              <span className="text-white">{description}</span>
+              <div className="mt-4 flex justify-center gap-6 text-white">
+                {website && (
+                  <a target="_blank" alt={website} href={website}>
+                    <AiOutlineGlobal
+                      size={35}
+                      className="hover:scale-110 hover:drop-shadow"
+                    />
+                  </a>
+                )}
+                {yt && (
+                  <a target="_blank" alt={yt} href={yt}>
+                    <AiOutlineYoutube
+                      size={35}
+                      className="hover:scale-110 hover:drop-shadow"
+                    />
+                  </a>
+                )}
 
-              {github && (
-                <a target="_blank" alt={github} href={github}>
-                  <AiOutlineGithub
-                    size={35}
-                    className="hover:scale-110 hover:drop-shadow"
-                  />
-                </a>
-              )}
+                {github && (
+                  <a target="_blank" alt={github} href={github}>
+                    <AiOutlineGithub
+                      size={35}
+                      className="hover:scale-110 hover:drop-shadow"
+                    />
+                  </a>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="flex flex-col  items-center  p-1 text-white">
-          <p>Technologies</p>
-          <div className="flex flex-wrap items-center justify-center gap-2 ">
-            {technologies.map((item, idx) => (
-              <img
-                key={idx}
-                src={item}
-                width={50}
-                className="aspect-square object-contain"
-              />
-            ))}
+          <div className="flex flex-col  items-center  p-1 text-white">
+            <p>Technologies</p>
+            <div className="flex flex-wrap items-center justify-center gap-2 ">
+              {technologies.map((item, idx) => (
+                <img
+                  key={idx}
+                  src={item}
+                  width={50}
+                  className="aspect-square object-contain"
+                />
+              ))}
+            </div>
           </div>
-        </div>
-   
         </Transition>
       </div>
-
     );
   },
 );
