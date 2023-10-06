@@ -4,6 +4,7 @@ import resume from "../assets/CV_ENG_NODATA.pdf";
 import { RxDoubleArrowDown } from "react-icons/rx";
 import { Transition } from "@headlessui/react";
 
+
 const Aboutme = () => {
   const [visible, setVisible] = useState(false);
 
@@ -12,6 +13,9 @@ const Aboutme = () => {
 
     return () => setVisible(false);
   }, []);
+
+
+
 
   return (
     <div
@@ -28,7 +32,7 @@ const Aboutme = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className=" min-h-[800px] flex w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-neonblue  shadow-2xl transition duration-1000 lg:w-8/12 lg:flex-row lg:min-h-fit">
+        <div className=" flex min-h-[800px] w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-2xl  shadow-neonblue transition duration-1000 lg:min-h-fit lg:w-8/12 lg:flex-row">
           <div className=" flex w-full flex-col items-center justify-center lg:w-1/2  ">
             <img
               className="rounded-lg  border border-neonblue  drop-shadow-lg  "
@@ -38,9 +42,10 @@ const Aboutme = () => {
           </div>
           <div className=" flex w-full  flex-col items-center justify-between lg:w-1/2">
             <div className="flex items-center justify-center">
-              <div className="flex w-max flex-col items-center  justify-center text-5xl p-6 text-white">
+              <div className="flex w-max flex-col items-center  justify-center p-6 text-5xl text-white">
                 <h2 className="animate-typing overflow-hidden whitespace-nowrap  text-5xl font-bold text-white">
-                 <span className=" text-neonblue text-6xl">Hi!</span>  I'm Patryk
+                  <span className=" text-6xl text-neonblue">Hi!</span> I'm
+                  Patryk
                 </h2>
                 <h3 className="text-xl md:text-2xl">
                   Junior Frontend Developer
@@ -48,21 +53,21 @@ const Aboutme = () => {
               </div>
             </div>
             <div className=" flex flex-col gap-4 rounded-lg border border-neonblue bg-white bg-opacity-20 p-4 text-center text-white shadow-inner shadow-neonblue ">
-              <span className=" text-lg text-white flex flex-col items-center">
-                <p className="text-xl w-max">
+              <span className=" flex flex-col items-center text-lg text-white">
+                <span className="w-max text-xl">
                   <b className="text-neonblue">About Me</b>
                   <hr></hr>
-                </p>
+                </span>
                 I'm Bachelor of Computer Science and self-educated Frontend
                 Developer with a huge willingness to learn technologies. Perhaps
                 the graphics aren't my best side as you can see, but don't worry
                 I can handle every under the hood technical problem.
               </span>
-              <span className=" text-lg flex flex-col items-center">
-                <p className="text-xl w-max">
+              <span className=" flex flex-col items-center text-lg">
+                <span className="w-max text-xl">
                   <b className="text-neonblue">Soft Skils</b>
-                  <hr  ></hr>
-                </p>
+                  <hr></hr>
+                </span>
                 Communicativeness
                 <br />
                 Teamwork skills
@@ -71,11 +76,11 @@ const Aboutme = () => {
                 <br />
                 Ability to solve problems independently
               </span>
-              <span className="text-lg flex flex-col items-center">
-                <p className="text-xl w-max">
+              <span className="flex flex-col items-center text-lg">
+                <span className="w-max text-xl">
                   <b className="text-neonblue">Languages</b>
                   <hr></hr>
-                </p>
+                </span>
                 Polish - native
                 <br />
                 English - B2
@@ -83,7 +88,7 @@ const Aboutme = () => {
             </div>
 
             <a
-              className="text-white mt-10 w-48 rounded-md border border-neonblue bg-white bg-opacity-20 p-2 text-center  hover:shadow-sm hover:shadow-neonblue hover:bg-neonblue hover:font-bold hover:border-white "
+              className="mt-10 w-48 rounded-md border border-neonblue bg-white bg-opacity-20 p-2 text-center text-white  hover:border-white hover:bg-neonblue hover:font-bold hover:shadow-sm hover:shadow-neonblue "
               href={resume}
               download="PS_CV"
             >
