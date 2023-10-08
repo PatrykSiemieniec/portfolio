@@ -71,6 +71,7 @@ function Sidebar() {
             <a
               href="https://github.com/PatrykSiemieniec"
               className="mt-auto flex items-center  gap-2 p-1 text-xl lg:text-2xl"
+              target="_blank" 
             >
               <BsGithub />
               <b>Github</b>
@@ -80,6 +81,7 @@ function Sidebar() {
             <a
               href="https://www.linkedin.com/in/patryksiemieniec99/"
               className="flex items-center gap-2  p-1 text-xl lg:text-2xl"
+              target="_blank"     
             >
               <BsLinkedin />
               <b>LinkedIn</b>
