@@ -107,10 +107,11 @@ const Technologies = () => {
   return (
     <div
       id="technologies"
-      className=" relative flex h-auto w-full flex-col items-center justify-center gap-4 bg-gray-900 p-6 lg:h-screen lg:flex-row "
+      className=" flex h-auto w-full flex-col items-center justify-center gap-4 bg-gray-900 p-4 2xl:h-screen   "
     >
-      <p className="absolute top-[10px] text-5xl text-white p-4">Technologies</p>
-      <div className="mt-10 flex w-full flex-col flex-wrap justify-evenly gap-4 p-6 lg:mt-0 lg:flex-row  ">
+      <div className=" flex flex-col items-center justify-center ">
+        <p className=" text-5xl text-white p-4">Technologies</p>
+        <div className="mt-10 flex  flex-col flex-wrap justify-evenly items-center gap-4  lg:mt-0 lg:flex-row ">
         {TechnologySections.map((item, idx) => (
           <TechnologySection
             key={idx}
@@ -124,10 +125,11 @@ const Technologies = () => {
       </div>
       <a
         href="#projects"
-        className="animate-bounce cursor-pointer    p-6 text-white md:p-0 lg:absolute lg:bottom-[40px]"
+        className="animate-bounce cursor-pointer    p-6 text-white md:p-0 mt-20"
       >
         <RxDoubleArrowDown size={35} />
       </a>
+      </div>
     </div>
   );
 };
@@ -139,7 +141,7 @@ const TechnologySection = forwardRef(
     return (
       <div
         ref={ref}
-        className="flex flex-col min-h-[300px] items-center justify-between rounded-lg border border-neonblue bg-white bg-opacity-20 p-4 shadow-md shadow-neonblue drop-shadow-lg lg:min-h-[200px] lg:w-2/5 "
+        className="flex min-h-[250px] w-full flex-col items-center justify-start rounded-lg  border border-neonblue bg-white bg-opacity-20 p-6 shadow-md shadow-neonblue drop-shadow-lg lg:min-h-250 lg:min-w-[700px] xl:w-2/5 xl:p-3"
       >
         <span className="text-xl text-white">{header}</span>
         <Transition
@@ -152,7 +154,7 @@ const TechnologySection = forwardRef(
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="flex min-h-[300px] w-full flex-wrap justify-around gap-4 p-4 lg:min-h-0">
+          <div className="flex min-h-[250px] w-full flex-wrap justify-around gap-4 p-4 lg:min-h-0">
             {technologies.map((item, idx) => (
               <img
                 key={idx}

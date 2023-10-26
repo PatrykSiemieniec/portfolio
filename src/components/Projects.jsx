@@ -166,11 +166,11 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className=" flex h-auto w-full flex-col items-center justify-center gap-4 bg-black p-2 xl:flex-row   "
+      className=" flex h-auto w-full flex-col items-center justify-center gap-4 bg-black p-4    "
     >
       <div className=" flex flex-col items-center justify-center ">
         <p className=" text-5xl text-white p-4">Projects</p>
-        <div className="mt-10 flex  flex-col flex-wrap justify-evenly gap-4 p-6 lg:mt-0 lg:flex-row ">
+        <div className="mt-10 flex  flex-col flex-wrap justify-evenly items-center gap-4  lg:mt-0 lg:flex-row ">
           {ListOfProjects.map((item, idx) => {
             return (
               <Project
@@ -191,7 +191,7 @@ const Projects = () => {
         </div>
         <a
           href="#contact"
-          className="animate-bounce cursor-pointer    p-6 text-white md:p-0 "
+          className="animate-bounce cursor-pointer    p-6 text-white md:p-0 mt-20 "
         >
           <RxDoubleArrowDown size={35} />
         </a>
@@ -220,7 +220,7 @@ const Project = forwardRef(
     return (
       <div
         ref={ref}
-        className="flex min-h-[500px] w-full flex-col items-center justify-start rounded-lg  border border-neonblue bg-white bg-opacity-20 p-6 shadow-md shadow-neonblue drop-shadow-lg lg:min-h-[300px] lg:min-w-[700px] xl:w-2/5 xl:p-3"
+        className="flex min-h-[500px] w-10/12 flex-col items-center justify-start rounded-lg  border border-neonblue bg-white bg-opacity-20 p-6 shadow-md shadow-neonblue drop-shadow-lg lg:min-h-[300px] lg:min-w-[700px] xl:w-2/5 xl:p-3"
       >
         <span className="text-center text-3xl text-white">{name}</span>
         <Transition

@@ -28,7 +28,7 @@ const Aboutme = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className=" flex min-h-[800px] w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-2xl  shadow-neonblue transition duration-1000 lg:min-h-fit lg:w-8/12 lg:flex-row">
+        <div className=" flex min-h-[800px] w-11/12 flex-col gap-4 rounded-xl  border  border-neonblue bg-white bg-opacity-20 p-5 shadow-2xl  shadow-neonblue transition duration-1000 lg:min-h-fit md:w-2/3  lg:flex-row">
           <div className=" flex w-full flex-col items-center justify-around lg:w-1/2  ">
             <div className="flex items-center justify-center">
               <div className="flex w-max flex-col items-center  justify-center  text-5xl text-white">

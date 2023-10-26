@@ -27,7 +27,7 @@ function Sidebar() {
           <Menu.Item>
             {({ close }) => (
               <div
-                className="mt-4 -mr-2 flex h-20 justify-end text-2xl"
+                className="mt-4 mr-5 flex h-20 justify-end text-2xl cursor-pointer"
                 onClick={close}
               >
                 <AiOutlineClose />
