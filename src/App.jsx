@@ -12,9 +12,9 @@ const router = createBrowserRouter([
     element: (
       <Suspense
         fallback={
-          <div className=" flex h-screen w-screen flex-col items-center justify-center gap-4">
+          <div className=" flex h-screen w-full flex-col items-center justify-center gap-4">
             <Waveform size={40} lineWeight={3.5} speed={1} color="white" />
-            <p className=" text-3xl text-white text-center">
+            <p className=" text-center text-3xl text-white">
               Portfolio is loading, wait a second!
             </p>
           </div>
@@ -30,9 +30,11 @@ const router = createBrowserRouter([
         element: (
           <Suspense
             fallback={
-              <div className=" flex h-screen w-screen flex-col items-center justify-center gap-4">
+              <div className=" flex h-screen w-full flex-col items-center justify-center gap-4">
                 <Waveform size={40} lineWeight={3.5} speed={1} color="white" />
-                <p className=" text-3xl text-white text-center">Just a moment!</p>
+                <p className=" text-center text-3xl text-white">
+                  Just a moment!
+                </p>
               </div>
             }
           >

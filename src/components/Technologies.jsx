@@ -110,7 +110,7 @@ const Technologies = () => {
       className=" relative flex h-auto w-full flex-col items-center justify-center gap-4 bg-gray-900 p-6 lg:h-screen lg:flex-row "
     >
       <p className="absolute top-[10px] text-5xl text-white p-4">Technologies</p>
-      <div className="mt-10 flex w-screen flex-col flex-wrap justify-evenly gap-4 p-6 lg:mt-0 lg:flex-row  ">
+      <div className="mt-10 flex w-full flex-col flex-wrap justify-evenly gap-4 p-6 lg:mt-0 lg:flex-row  ">
         {TechnologySections.map((item, idx) => (
           <TechnologySection
             key={idx}
