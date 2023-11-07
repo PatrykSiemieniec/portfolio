@@ -10,6 +10,7 @@ import weather from "../assets/projects/weather.png";
 import internship_project from "../assets/projects/internship_project.png";
 import restaurantapp from "../assets/projects/restaurantapp.png";
 import portfolio from "../assets/projects/portfolio.png";
+import expenses from "../assets/projects/expenses_tracker.png"
 
 import react from "../assets/technologiesLogo/react.png";
 import ts from "../assets/technologiesLogo/ts.png";
@@ -25,6 +26,10 @@ import reacthookform from "../assets/technologiesLogo/reacthookform.png";
 import antd from "../assets/technologiesLogo/antd.png";
 import headlessui from "../assets/technologiesLogo/headlessui.png";
 import firebase from "../assets/technologiesLogo/firebase.png";
+import angular from "../assets/technologiesLogo/angular.png"
+import rxjs from "../assets/technologiesLogo/rxjs.png"
+import ngrx from "../assets/technologiesLogo/ngrx.png"
+import bootstrap from "../assets/technologiesLogo/bootstrap.png"
 
 import { forwardRef, useRef, useState, useEffect, Fragment } from "react";
 import { Transition } from "@headlessui/react";
@@ -35,10 +40,12 @@ const Projects = () => {
     useRef(null),
     useRef(null),
     useRef(null),
+    useRef(null),
   ];
 
   // State for each element's visibility
   const [elementVisibility, setElementVisibility] = useState([
+    false,
     false,
     false,
     false,
@@ -91,6 +98,19 @@ const Projects = () => {
     {
       elementVisibility: elementVisibility[0],
       ref: elementRefs[0],
+      name: "Expenses Tracker",
+      imgSrc: expenses,
+      alt: "expenses",
+      description:
+        "My first app using Angular, rxjs and ngrx. Expenses Tracker let you save your expenses and check your budget by the end of the month. Let's try, save some money! ",
+      yt: "",
+      github: "https://github.com/PatrykSiemieniec/ANGULAR_expenses_tracker",
+      website: "https://expense-trackerps.netlify.app/",
+      technologies: [html, ts, angular, rxjs, ngrx, bootstrap],
+    },
+    {
+      elementVisibility: elementVisibility[1],
+      ref: elementRefs[1],
       name: "Irregular Verbs Quiz",
       imgSrc: quiz,
       alt: "quiz",
@@ -102,8 +122,8 @@ const Projects = () => {
       technologies: [html, css, ts, react],
     },
     {
-      elementVisibility: elementVisibility[1],
-      ref: elementRefs[1],
+      elementVisibility: elementVisibility[2],
+      ref: elementRefs[2],
       name: "Weather App",
       imgSrc: weather,
       alt: "weather app",
@@ -124,8 +144,8 @@ const Projects = () => {
       ],
     },
     {
-      elementVisibility: elementVisibility[2],
-      ref: elementRefs[2],
+      elementVisibility: elementVisibility[3],
+      ref: elementRefs[3],
       name: "Internship Project",
       imgSrc: internship_project,
       alt: "internship project",
@@ -137,8 +157,8 @@ const Projects = () => {
       technologies: [html, ts, react, sass, redux, reacthookform, antd],
     },
     {
-      elementVisibility: elementVisibility[3],
-      ref: elementRefs[3],
+      elementVisibility: elementVisibility[4],
+      ref: elementRefs[4],
       name: "Restaurant management system",
       imgSrc: restaurantapp,
       alt: "Restaurant management system",
@@ -150,8 +170,8 @@ const Projects = () => {
       technologies: [html, css, js, react, firebase],
     },
     {
-      elementVisibility: elementVisibility[4],
-      ref: elementRefs[4],
+      elementVisibility: elementVisibility[5],
+      ref: elementRefs[5],
       name: "Portfolio",
       imgSrc: portfolio,
       alt: "Portfolio",
